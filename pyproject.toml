@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gridload"
+version = "0.1.0"
+description = "Day-ahead electricity load forecasting for Germany with LightGBM, Optuna and conformal prediction intervals, benchmarked against the official ENTSO-E forecast."
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Muhammad Hasnat" }]
+dependencies = ["lightgbm>=4", "optuna>=3", "pandas>=2", "pyarrow", "numpy", "holidays>=0.40", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[tool.ruff]
+line-length = 140
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
