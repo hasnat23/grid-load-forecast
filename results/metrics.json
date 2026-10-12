@@ -1,0 +1,99 @@
+{
+  "test_period": "2020-01-01 to 2020-09-30",
+  "models": {
+    "LightGBM (this repo)": {
+      "MAPE %": 2.442,
+      "MAE MW": 1256.6,
+      "RMSE MW": 1647.5,
+      "hours": 6576
+    },
+    "ENTSO-E / TSO day-ahead forecast": {
+      "MAPE %": 2.812,
+      "MAE MW": 1458.9,
+      "RMSE MW": 1891.9,
+      "hours": 6576
+    },
+    "Seasonal naive (same hour last week)": {
+      "MAPE %": 4.296,
+      "MAE MW": 2226.5,
+      "RMSE MW": 3777.6,
+      "hours": 6576
+    },
+    "LightGBM without weather": {
+      "MAPE %": 2.804,
+      "MAE MW": 1446.8,
+      "RMSE MW": 1859.2,
+      "hours": 6576
+    },
+    "LightGBM without holiday features": {
+      "MAPE %": 3.033,
+      "MAE MW": 1514.3,
+      "RMSE MW": 2479.3,
+      "hours": 6576
+    }
+  },
+  "interval_80pct": {
+    "coverage_2020": 69.3,
+    "coverage_by_month": {
+      "Jan": 66.1,
+      "Feb": 80.6,
+      "Mar": 57.7,
+      "Apr": 53.6,
+      "May": 69.8,
+      "Jun": 60.4,
+      "Jul": 80.9,
+      "Aug": 70.4,
+      "Sep": 84.7
+    },
+    "mean_width_mw": 3118.7
+  },
+  "best_params": {
+    "learning_rate": 0.018039195014874488,
+    "num_leaves": 65,
+    "min_data_in_leaf": 86,
+    "feature_fraction": 0.5283570271893877,
+    "bagging_fraction": 0.881450314604352,
+    "lambda_l2": 0.03453371822009709,
+    "objective": "regression_l1",
+    "bagging_freq": 1
+  },
+  "rounds": 4475,
+  "monthly_mape": {
+    "Jan": {
+      "LightGBM": 2.38,
+      "ENTSO-E": 3.22
+    },
+    "Feb": {
+      "LightGBM": 1.59,
+      "ENTSO-E": 2.26
+    },
+    "Mar": {
+      "LightGBM": 2.86,
+      "ENTSO-E": 3.96
+    },
+    "Apr": {
+      "LightGBM": 3.54,
+      "ENTSO-E": 4.05
+    },
+    "May": {
+      "LightGBM": 2.62,
+      "ENTSO-E": 3.63
+    },
+    "Jun": {
+      "LightGBM": 2.95,
+      "ENTSO-E": 2.19
+    },
+    "Jul": {
+      "LightGBM": 1.95,
+      "ENTSO-E": 1.57
+    },
+    "Aug": {
+      "LightGBM": 2.35,
+      "ENTSO-E": 2.35
+    },
+    "Sep": {
+      "LightGBM": 1.72,
+      "ENTSO-E": 2.03
+    }
+  }
+}
