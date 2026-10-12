@@ -81,7 +81,7 @@ larger training set.
 ```bash
 git clone https://github.com/hasnat23/grid-load-forecast && cd grid-load-forecast
 pip install -e ".[dev]"
-PYTHONPATH=src python -m gridload.train --trials 60     # downloads data on first run (~130 MB + weather API)
+python -m gridload.train --trials 60     # downloads data on first run (~130 MB + weather API)
 ```
 
 Writes `results/metrics.json`, the three figures and `results/model.txt`. Expect an hour or more for 60 trials on a laptop CPU; `--trials 10` gives nearly the same accuracy in a fraction of the time.
